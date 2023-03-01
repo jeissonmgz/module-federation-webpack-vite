@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { createBrowserHistory } from 'history'
 
-const mount = (el) => {
+const mount = (el, basename = '') => {
     const history = createBrowserHistory()
-
+console.log('this is basename', basename)
     ReactDOM.render(
-        <App history={history} />,
+        <App history={history} basename={basename} />,
         el
     )
 
     return {
-        onParentNavigate({ pathname: nextPathname }) {
+        onParentNavigate({ pathname: nextPathname }, basename) {
             const { pathname } = history.location
             if (pathname !== nextPathname) {
+                console.log('navegar a ', nextPathname)
                 history.push(nextPathname)
             }
         }

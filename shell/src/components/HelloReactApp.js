@@ -7,7 +7,7 @@ export default () => {
     const history = useHistory();
 
     useEffect(() => {
-        const { onParentNavigate } = mount(ref.current)
+        const { onParentNavigate } = mount(ref.current, '/comprar')
         history.listen(onParentNavigate)
     }, [])
 
