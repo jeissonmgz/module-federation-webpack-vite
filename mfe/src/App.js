@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, Router, Link } from 'react-router-dom'
 
-const HelloReact = React.lazy(() => import("./pages/Product"));
-const HelloWorld = React.lazy(() => import("./pages/Home"));
+const ProductLazy = React.lazy(() => import("./pages/Product"));
+const HomeLazy = React.lazy(() => import("./pages/Home"));
 
 
 export default ({ history, basename }) => {
@@ -12,11 +12,11 @@ export default ({ history, basename }) => {
         
             <Switch>
 
-                <Route path={`${basename}/react`} component={HelloReact} />
-                <Route path={`${basename}/`} component={HelloWorld} />
+                <Route path={`${basename}/product`} component={ProductLazy} />
+                <Route path={`${basename}/`} component={HomeLazy} />
             </Switch>
             <br />
-            <Link to={`${basename}/react`}>Product</Link>
+            <Link to={`${basename}/product`}>Product</Link>
             <br />
             <Link to={`${basename}/`}>Home</Link>
             </React.Suspense>

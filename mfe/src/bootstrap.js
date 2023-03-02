@@ -5,7 +5,6 @@ import { createBrowserHistory } from 'history'
 
 const mount = (el, basename = '') => {
     const history = createBrowserHistory()
-console.log('this is basename', basename)
     ReactDOM.render(
         <App history={history} basename={basename} />,
         el
@@ -15,7 +14,6 @@ console.log('this is basename', basename)
         onParentNavigate({ pathname: nextPathname }, basename) {
             const { pathname } = history.location
             if (pathname !== nextPathname) {
-                console.log('navegar a ', nextPathname)
                 history.push(nextPathname)
             }
         }
