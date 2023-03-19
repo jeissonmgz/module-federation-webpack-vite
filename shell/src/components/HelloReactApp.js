@@ -1,15 +1,22 @@
-import { mount } from 'helloReact/HelloReactApp'
-import React, { useRef, useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
+import React, { useRef, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
+import { importRemote } from "../mfe/importRemote";
 
 export default () => {
-    const ref = useRef(null);
-    const history = useHistory();
+  const ref = useRef(null);
+  const history = useHistory();
 
-    useEffect(() => {
-        const { onParentNavigate } = mount(ref.current, '/comprar')
-        history.listen(onParentNavigate)
-    }, [])
+  useEffect(() => {
+    importRemote({
+      url: "http://localhost:3010",
+      scope: "helloReact",
+      module: "HelloReactApp",
+    }).then(({ mount }) => {
+      const { onParentNavigate } = mount(ref.current, "/comprar");
+      history.listen(onParentNavigate);
+    });
+  }, []);
 
-    return <div ref={ref} />
-}
+  return <div ref={ref} />;
+};
