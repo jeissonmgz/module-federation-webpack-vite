@@ -13,7 +13,7 @@ export default () => {
       scope: "helloReact",
       module: "HelloReactApp",
     }).then(({ mount }) => {
-      const { onParentNavigate } = mount(ref.current, "/comprar");
+      const { onParentNavigate } = mount(ref.current, "/microfrontend", history);
       history.listen(onParentNavigate);
     });
   }, []);

@@ -1,5 +1,5 @@
 import React from 'react'
 
-const Home = () => (<div>Welcome to Home!</div>)
+const Home = () => (<h1>Welcome to My Microfrontend!</h1>)
 
 export default Home;

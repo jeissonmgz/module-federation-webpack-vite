@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { createBrowserHistory } from 'history'
 
-const mount = (el, basename = '') => {
-    const history = createBrowserHistory()
+const mount = (el, basename = '', history = null) => {
+    const historyMfe = history ?? createBrowserHistory()
     ReactDOM.render(
-        <App history={history} basename={basename} />,
+        <App history={historyMfe} basename={basename} />,
         el
     )
 

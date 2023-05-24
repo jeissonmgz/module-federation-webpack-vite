@@ -16,6 +16,8 @@ export default ({ history, basename }) => {
                 <Route path={`${basename}/`} component={HomeLazy} />
             </Switch>
             <br />
+            <Link to={`/`}>Home Shell</Link>
+            <br />
             <Link to={`${basename}/product`}>Product</Link>
             <br />
             <Link to={`${basename}/`}>Home</Link>
