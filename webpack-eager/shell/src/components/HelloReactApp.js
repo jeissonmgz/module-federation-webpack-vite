@@ -7,7 +7,7 @@ export default () => {
     const history = useHistory();
 
     useEffect(() => {
-        const { onParentNavigate } = mount(ref.current, "/comprar", history);
+        const { onParentNavigate } = mount(ref.current, "/microfrontend", history);
         history.listen(onParentNavigate);
     }, [])
 

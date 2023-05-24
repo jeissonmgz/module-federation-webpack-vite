@@ -7,11 +7,13 @@ const history = createBrowserHistory();
 
 const Header = () => (
     <div>
-        <Link to='/'>Home Shell</Link><br />
-        <Link to='/comprar'>Home Mfe</Link><br />
-        <Link to='/comprar/product'>Product list</Link>
+    <Link to='/'>Home Shell</Link><br />
+    <Link to='/microfrontend'>Home Microfrontend</Link><br />
+    <Link to='/microfrontend/subroute'>Subroute Microfrontend</Link>
     </div >
 )
+
+const Home = () => (<h1>Hola, soy una shell</h1>)
 
 export default () => {
     return (
@@ -19,7 +21,8 @@ export default () => {
             <Header />
             <hr />
             <Switch>
-                <Route path='/comprar' component={HelloReactApp} />
+                <Route path='/microfrontend' component={HelloReactApp} />
+                <Route path='/' component={Home} />
             </Switch>
         </BrowserRouter>
     )
