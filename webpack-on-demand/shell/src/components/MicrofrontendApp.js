@@ -10,8 +10,8 @@ export default () => {
   useEffect(() => {
     importRemote({
       url: "http://localhost:3010",
-      scope: "helloReact",
-      module: "HelloReactApp",
+      scope: "microFrontendReact",
+      module: "MicroFrontendReact",
     }).then(({ mount }) => {
       const { onParentNavigate } = mount(ref.current, "/microfrontend", history);
       history.listen(onParentNavigate);
