@@ -4,7 +4,6 @@ import './App.css'
 import { setBasename, setNavigateShell, useNavigateMfe } from './hooks/useNavigateMfe';
 
 
-const CategoryLazy = React.lazy(() => import("./pages/Category"));
 const HomeLazy = React.lazy(() => import("./pages/Home"));
 
 
@@ -29,14 +28,15 @@ function App({ basename, pathname, navigateShell }) {
     
         <Routes>
 
-            <Route path={`${basename}/tags/:tag?`} element={<CategoryLazy />} />
+            
             <Route path={`${basename}/`} element={<HomeLazy />} />
         </Routes>
         <Redirect pathname={pathname} />
         <br />
+        <button onClick={()=>{navigateShell('/')}}>Home</button>
+        <button onClick={()=>{navigateShell('/emoji')}}>Emoji</button>
+        <button onClick={()=>{navigateShell('/emoji/tags')}}>Emoji Tags</button>
         
-        <Link to={`${basename}/`}>Inicio Emoji</Link>&nbsp;&nbsp;| 
-        &nbsp;<Link to={`${basename}/tags`}>Tags</Link>
         <br />
         </React.Suspense>
     </Router>
