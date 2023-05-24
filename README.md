@@ -4,5 +4,5 @@ This repository show examples about microfrontends using Module Federation to co
 ## Examples
 - [X] Webpack with eager loading
 - [X] Webpack with lazy loading
-- [X] Basic exmple with vite
+- [X] [Basic exmple with vite]([https://github.com/originjs/vite-plugin-federation/tree/main/packages/examples/react-vite](https://github.com/jeissonmgz/module-federation-webpack-vite/tree/main/vite-simple-component))
 - [X] Comunicate shell with 2 microfrontends
