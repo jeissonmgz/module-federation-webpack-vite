@@ -1,5 +1,5 @@
 import React from 'react';
-import HelloReactApp from './components/HelloReactApp';
+import MicroFrontendReactApp from './components/MicroFrontendReactApp';
 import { Route, Switch, BrowserRouter, Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
@@ -21,7 +21,7 @@ export default () => {
             <Header />
             <hr />
             <Switch>
-                <Route path='/microfrontend' component={HelloReactApp} />
+                <Route path='/microfrontend' component={MicroFrontendReactApp} />
                 <Route path='/' component={Home} />
             </Switch>
         </BrowserRouter>

@@ -17,10 +17,10 @@ const devConfig = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'helloReact',
+            name: 'microFrontendReact',
             filename: 'remoteEntry.js',
             exposes: {
-                './HelloReactApp': './src/bootstrap'
+                './MicroFrontendReactApp': './src/bootstrap'
             },
             shared: packageJson.dependencies
         }),
