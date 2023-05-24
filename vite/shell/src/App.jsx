@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation} from 'react-router-dom'
 
 const HomeLazy = React.lazy(() => import("./pages/Home"));
 const EmojiAppLazy = React.lazy(() => import("remoteApp/mount"));
@@ -18,18 +18,20 @@ const NavBar = () => {
 function App({history}) {
 
 
+  const {pathname} = useLocation();
+  
+  
 
-
-  return (<Router>
+  return (
     <React.Suspense fallback={<div>Loading...</div>}>
     
     <NavBar />
     <Link to="/emoji/tags">Tags</Link>
     <Routes>
       <Route path='/' element={<HomeLazy />} />
-        <Route path='/emoji/*' element={<EmojiAppLazy basename='/emoji' />} />
+        <Route path='/emoji/*' element={<EmojiAppLazy basename='/emoji' pathname={pathname}/>} />
     </Routes>
-        </React.Suspense></Router>
+        </React.Suspense>
   )
 }
 

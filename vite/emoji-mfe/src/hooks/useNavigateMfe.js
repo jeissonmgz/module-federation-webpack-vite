@@ -5,7 +5,7 @@ let basename = "";
 export const useNavigateMfe = () => {
     const navigate = useNavigate();
     const inside = (route) => navigate(`${basename}${route}`);
-    const outside = (route) => navigate(`${basename}${route}`);
+    const outside = (route) => navigate(`${route}`);
     return {
         inside, outside, setBasename
     }
