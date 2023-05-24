@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "remote_app",
+      name: "emoji_mfe",
       filename: "remoteEntry.js",
       exposes: {
-        './mount': './src/App.jsx'
+        './App': './src/App.jsx'
       },
       shared: ['react','react-dom']
     })

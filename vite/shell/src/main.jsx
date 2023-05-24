@@ -4,13 +4,9 @@ import App from './App'
 import { BrowserRouter as Router} from 'react-router-dom'
 import './index.css'
 
-import { createBrowserHistory } from "history";
-
-const history= createBrowserHistory();
-
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
-        <App history={history} />
-        </Router>
+        <App />
+    </Router>
     
 )

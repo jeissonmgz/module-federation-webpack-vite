@@ -6,9 +6,9 @@ const Home = () => {
   return (
     <div>Home Shell
     
-    <button onClick={()=> {console.log('navegar'); navigate('/')}}>Home</button>
-    <button onClick={()=> {console.log('navegar /emoji'); navigate('/emoji')}}>Emoji</button>
-    <button onClick={()=> {console.log('navegar /emoji/tags'); navigate('/emoji/tags')}}>Emoji Tags</button>
+    <button onClick={()=> {navigate('/')}}>Home</button>
+    <button onClick={()=> {navigate('/emoji')}}>Emoji</button>
+    <button onClick={()=> {navigate('/emoji/tags')}}>Emoji Tags</button>
     
     <Link to="/emoji/tags">Tags</Link>
     </div>
