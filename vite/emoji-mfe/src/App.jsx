@@ -11,7 +11,9 @@ const HomeLazy = React.lazy(() => import("./pages/Home"));
 function Redirect({pathname}) {
   const {outside} = useNavigateMfe()
   useEffect(() => {
-    outside(pathname);
+    if(pathname){
+      outside(pathname);
+    }
   }, [pathname])
   return <></>
 }
@@ -19,8 +21,6 @@ function Redirect({pathname}) {
 
 function App({ basename, pathname }) {
   setBasename(basename);
-  
-
   return (
     <div className="App">
     <Router >
