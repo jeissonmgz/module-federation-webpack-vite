@@ -1,4 +1,4 @@
-import { mount } from 'microFrontendReact/MicroFrontendReactApp'
+import { mount } from 'mfe2/RoutesMFE2'
 import React, { useRef, useEffect } from 'react'
 
 
@@ -7,7 +7,7 @@ export default ({pathname, navigateShell}) => {
 
 
     useEffect(() => {
-        mount(ref.current, "/microfrontend", pathname, navigateShell);
+        mount(ref.current, "/microfrontend2", pathname, navigateShell);
     }, [pathname])
 
     return <div ref={ref} />

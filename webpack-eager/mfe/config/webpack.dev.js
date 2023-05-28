@@ -7,6 +7,7 @@ const packageJson = require('../package.json')
 const devConfig = {
     mode: 'development',
     output: {
+        uniqueName: 'microFrontendReact',
         publicPath: 'http://localhost:3010/',
     },
     devServer: {
