@@ -1,0 +1,41 @@
+
+.mfe2 {
+    background-color: darkgray;
+    border-radius: 12px;
+    padding: 12px 12px;
+    margin-top: 24px;
+
+    & .navbar {
+        margin-top: 12px;
+        & ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: gray;
+            border-radius: 8px;
+            
+            & li {
+                float: left;
+                
+                & a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    
+                    &:hover:not(.active) {
+                        background-color: #111;
+                    }
+                }
+            }
+        }
+        
+
+
+        & .active {
+            background-color: #04AA6D;
+        }
+    }
+}
