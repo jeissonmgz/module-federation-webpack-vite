@@ -1,18 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { navigateShell } from './NavigateShell';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink],
   template: `
     <p>hello, this is angular, avite</p>
-    <a
-      routerLink="/"
-      href="#"
-      class="text-xl font-bold no-underline hover:underline ..."
-      >Home |
-    </a>
+    <button (click)="goToShellHome()">Ir al Home de la shell</button>
     <a
       routerLink="/angular"
       href="#"
@@ -37,4 +33,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+
+  goToShellHome() {
+    navigateShell('/');
+  }
+}

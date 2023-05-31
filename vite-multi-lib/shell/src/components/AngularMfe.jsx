@@ -1,39 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-//import AppComponent from 'AngularMfe/App';
+import React, { useEffect } from "react";
+import { useState } from "react";
 
-const AngularAppLazy = React.lazy(() => import("AngularMfe/App"));
-
-const AngularMFE = () => {
-  const angularRef = useRef(null);
-  const [render, setRender] = useState(false);
+const AngularMfe = ({pathname, navigateShell}) => {
+  const [module, setRender] = useState(null)
   useEffect(() => {
-    if (!angularRef) return;
-    angularRef.current.innerHTML = "<app-root></app-root>";
-    setRender(true);
-  
-    return () => {
-      setRender(false);
-    }
-  }, [angularRef])
-  
-  /*
-  console.log("AppComponent", AppComponent)
-
-  useEffect(() => {
-    platformBrowserDynamic().bootstrapModule(AppComponent)
-      .catch(err => console.error(err));
+    import("AngularMfe/App").then(c=> {
+      setRender(c.default);
+      c.default.mount(navigateShell);
+    });
   }, []);
-  */
-
-  console.log("first")
-
-  return (<>
-    <div ref={angularRef} />
-    {render && <React.Suspense fallback={<div>Loading...</div>}>
-      <AngularAppLazy />
-    </React.Suspense>}
-  </>);
+  useEffect(() => {
+    console.log(pathname, module)
+    module && module.mount(navigateShell);
+  }, [pathname]);
+  return (
+    <div className="remote-module">
+      <app-root></app-root>
+    </div>
+  );
 };
 
-export default AngularMFE;
+export default AngularMfe;
