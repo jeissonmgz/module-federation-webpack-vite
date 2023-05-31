@@ -6,6 +6,7 @@ const packageJson = require('../package.json')
 const devConfig = {
     mode: 'development',
     output: {
+        uniqueName: 'shell',
         publicPath: 'http://localhost:3000/'
     },
     devServer: {

@@ -8,6 +8,7 @@ const devConfig = {
     mode: 'development',
     output: {
         publicPath: 'http://localhost:3010/',
+        uniqueName: 'mfe',
     },
     devServer: {
         port: 3010,

@@ -7,13 +7,13 @@ const history = createBrowserHistory();
 
 const Header = () => (
     <div>
-        <Link to='/'>Home Shell</Link><br />
-        <Link to='/microfrontend'>Home Microfrontend</Link><br />
+        <Link to='/'>Home Shell</Link> |
+        <Link to='/microfrontend'>Home Microfrontend</Link> |
         <Link to='/microfrontend/subroute'>Subroute Microfrontend</Link>
-    </div >
+    </div>
 )
 
-const Home = () => (<h1>Hola, soy una shell</h1>)
+const Home = () => (<h1>Shell webpack-on-demand</h1>)
 
 export default () => {
     return (

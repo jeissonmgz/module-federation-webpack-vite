@@ -15,12 +15,10 @@ export default ({ history, basename }) => {
                 <Route path={`${basename}/subroute`} component={SubrouteLazy} />
                 <Route path={`${basename}/`} component={HomeLazy} />
             </Switch>
-            <br />
-            <Link to={`/`}>Home Shell</Link>
-            <br />
+            <hr />
+            <Link to={`/`}>Home Shell</Link>|
+            <Link to={`${basename}/`}>Home Microfrontend</Link> |
             <Link to={`${basename}/subroute`}>Subroute Microfrontend</Link>
-            <br />
-            <Link to={`${basename}/`}>Home Microfrontend</Link>
             </React.Suspense>
         </Router>
     </div>
