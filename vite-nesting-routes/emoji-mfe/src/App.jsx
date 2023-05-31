@@ -23,7 +23,7 @@ function App({ basename, pathname, navigateShell }) {
   setBasename(basename);
   setNavigateShell(navigateShell);
   return (
-    <div className="App">
+    <div className="EmojiMfe">
     <Router >
     <React.Suspense fallback={<div>Loading...</div>}>
     

@@ -9,9 +9,10 @@ const ColorAppLazy = React.lazy(() => import("ColorMfe/App"));
 const NavBar = () => {
   const navigate = useNavigate();
   return <nav>
-    <button onClick={()=> {navigate('/')}}>Home</button>
-    <button onClick={()=> {navigate('/emoji')}}>Emoji</button>
-    <button onClick={()=> {navigate('/emoji/tags')}}>Emoji Tags</button>
+    <button onClick={()=> {navigate('/')}}>Home SHell</button>
+    <button onClick={()=> {navigate('/emoji')}}>Emoji Mfe</button>
+    <button onClick={()=> {navigate('/emoji/tags')}}>Emoji Mfe - Tags</button>
+    <button onClick={()=> {navigate('/color')}}>Color Mfe</button>
   </nav>
 }
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
       <NavBar />
+      <Link to="/emoji">Emoji</Link> - 
       <Link to="/emoji/tags">Tags</Link> - 
       <Link to="/color">Color</Link>
       <Routes>
