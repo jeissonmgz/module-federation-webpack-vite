@@ -11,6 +11,10 @@ export default defineConfig({
       remotes: {
         AngularMfe: 'http://localhost:5010/assets/remoteEntry.js',
         VueMfe: 'http://localhost:5011/assets/remoteEntry.js',
+        ReactMfe: {
+          external: 'http://localhost:5012/remoteEntry.js',
+          format: 'var'
+        }
       },
       shared: ['react','react-dom']
     })

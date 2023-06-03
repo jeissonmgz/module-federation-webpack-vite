@@ -4,6 +4,8 @@ import './App.css'
 const HomeLazy = React.lazy(() => import("./pages/Home"));
 const AngularAppLazy = React.lazy(() => import('./components/AngularMfe'));
 const VueAppLazy = React.lazy(() => import('./components/VueMfe'));
+const ReactAppLazy = React.lazy(() => import('./components/ReactWebpackApp'));
+
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -14,6 +16,8 @@ const NavBar = () => {
     <button onClick={()=> {navigate('/angular/about')}}>Angular About</button>
     <button onClick={()=> {navigate('/vue')}}>Vue Home</button>
     <button onClick={()=> {navigate('/vue/about')}}>Vue About</button>
+    <button onClick={()=> {navigate('/react')}}>React Home</button>
+    <button onClick={()=> {navigate('/react/subroute')}}>React About</button>
   </nav>
 }
 
@@ -26,6 +30,7 @@ function App() {
       <Link to="/emoji/tags">Tags</Link> - 
       <Link to="/color">Color</Link>
       <Routes>
+        <Route path='/react/*' element={<ReactAppLazy basename={"/react"} pathname={pathname} navigateShell={navigateShell} />} />
         <Route path='/vue/*' element={<VueAppLazy basename={"/vue"} pathname={pathname} navigateShell={navigateShell} />} />
         <Route path='/angular/*' element={<AngularAppLazy pathname={pathname} navigateShell={navigateShell} />} />
         <Route path='/' element={<HomeLazy />} />
