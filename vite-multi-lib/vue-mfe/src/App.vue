@@ -1,5 +1,5 @@
 <template>
-  
+  <h1>Vue + Vite</h1>
   <div id="nav">
       <button @click="goHomeShell">Home Shell</button>
       <router-link :to="`${basename}/`">Home</router-link> |

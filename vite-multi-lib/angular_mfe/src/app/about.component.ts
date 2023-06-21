@@ -4,6 +4,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-about',
   standalone: true,
   imports: [CommonModule],
-  template: ` <p>hello, this is about us page</p> `,
+  template: `<h2>About</h2>`,
 })
 export class AboutComponent {}

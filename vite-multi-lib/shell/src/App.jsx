@@ -17,7 +17,7 @@ const NavBar = () => {
     <button onClick={()=> {navigate('/vue')}}>Vue Home</button>
     <button onClick={()=> {navigate('/vue/about')}}>Vue About</button>
     <button onClick={()=> {navigate('/react')}}>React Home</button>
-    <button onClick={()=> {navigate('/react/subroute')}}>React About</button>
+    <button onClick={()=> {navigate('/react/about')}}>React About</button>
   </nav>
 }
 
@@ -27,8 +27,6 @@ function App() {
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
       <NavBar />
-      <Link to="/emoji/tags">Tags</Link> - 
-      <Link to="/color">Color</Link>
       <Routes>
         <Route path='/react/*' element={<ReactAppLazy basename={"/react"} pathname={pathname} navigateShell={navigateShell} />} />
         <Route path='/vue/*' element={<VueAppLazy basename={"/vue"} pathname={pathname} navigateShell={navigateShell} />} />

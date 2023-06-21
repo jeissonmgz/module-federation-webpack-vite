@@ -7,7 +7,7 @@ import { navigateShell } from './NavigateShell';
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink],
   template: `
-    <p>hello, this is angular, avite</p>
+    <h1>Angular + vite</h1>
     <button (click)="goToShellHome()">Ir al Home de la shell</button>
     <a
       routerLink="/angular"
